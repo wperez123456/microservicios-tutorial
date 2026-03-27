@@ -4,7 +4,7 @@ spring:
   application:
     name: carro-service
   datasource:
-    url: jdbc:h2:file:./data/carrosdb
+    url: jdbc:h2:file:./data/carrosdb;AUTO_SERVER=TRUE
     driverClassName: org.h2.Driver
     username: sa
     password:
