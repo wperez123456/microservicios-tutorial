@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.usuario.service.entity.Usuario;
 import com.usuario.service.feignclients.CarroFeignClient;
+import com.usuario.service.feignclients.MotoFeignClient;
 import com.usuario.service.modelos.Carro;
 import com.usuario.service.modelos.Moto;
 import com.usuario.service.repository.UsuarioRepository;
@@ -20,6 +21,8 @@ public class UsuarioService {
 	private RestTemplate restTemplate;
 	@Autowired
 	private CarroFeignClient carroFeignClient;
+	@Autowired
+	private MotoFeignClient motoFeignClient;
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
@@ -38,6 +41,11 @@ public class UsuarioService {
 	public Carro saveCarro(int usuarioId, Carro carro) {
 		carro.setUsuarioId(usuarioId);
 		return carroFeignClient.save(carro);
+	}
+	
+	public Moto saveMoto(int usuarioId, Moto moto) {
+		moto.setUsuarioId(usuarioId);
+		return motoFeignClient.save(moto);
 	}
 	
 	public List <Usuario> getAll(){
