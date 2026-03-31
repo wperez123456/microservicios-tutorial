@@ -4,12 +4,12 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.usuario.service.modelos.Carro;
+import com.usuario.service.modelos.Moto;
 
 //@FeignClient(name = "carro-service", url = "http://localhost:8002") se comenta porque el gateway se encarga del resto
-@FeignClient(name = "carro-service")
-public interface CarroFeignClient {
+@FeignClient(name = "moto-service")
+public interface MotoFeignClient {
 
-	@PostMapping("/carro")
-	public Carro save(@RequestBody Carro carro);
+	@PostMapping("/moto")
+	public Moto save(@RequestBody Moto moto);
 }

@@ -25,13 +25,13 @@ public class UsuarioService {
 	
 	@SuppressWarnings("unchecked")
 	public List<Carro> getCarros(int usuarioId){
-		 List<Carro> carros = restTemplate.getForObject("http://localhost:8002/carro/usuario/" + usuarioId, List.class);
+		 List<Carro> carros = restTemplate.getForObject("http://carro-sercvice/carro/usuario/" + usuarioId, List.class);
 		 return carros;
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Moto> getMotos(int usuarioId){
-		List<Moto> moto = restTemplate.getForObject("http://localhost:8003/moto/usuario/" + usuarioId, List.class);
+		List<Moto> moto = restTemplate.getForObject("http://moto-sercvice/moto/usuario/" + usuarioId, List.class);
 		return moto;
 	}
 	

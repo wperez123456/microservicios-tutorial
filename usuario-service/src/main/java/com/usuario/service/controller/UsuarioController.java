@@ -84,7 +84,7 @@ public class UsuarioController {
 		return new ResponseEntity("El usuario:" + usuarioId + "tiene los carros en el taller", HttpStatus.OK);
 	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ResponseEntity<List<Carro>> fallBackSaveCarro(@PathVariable("usuarioId") int usuarioId, @RequestBody Carro carro, RuntimeException exception){
+	public ResponseEntity<Carro> fallBackSaveCarro(@PathVariable("usuarioId") int usuarioId, @RequestBody Carro carro, RuntimeException exception){
 		return new ResponseEntity("El usuario:" + usuarioId + "no tiene dinero para los carros", HttpStatus.OK);
 	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -92,7 +92,7 @@ public class UsuarioController {
 		return new ResponseEntity("El usuario:" + usuarioId + "tiene las motos en el taller", HttpStatus.OK);
 	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ResponseEntity<List<Moto>> fallBackSaveMoto(@PathVariable("usuarioId") int usuarioId, @RequestBody Moto carro, RuntimeException exception){
+	public ResponseEntity<Moto> fallBackSaveMoto(@PathVariable("usuarioId") int usuarioId, @RequestBody Moto carro, RuntimeException exception){
 		return new ResponseEntity("El usuario:" + usuarioId + "no tiene dinero para las motos", HttpStatus.OK);
 	}
 }
