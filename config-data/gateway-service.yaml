@@ -21,7 +21,6 @@ spring:
           predicates:
             - Path=/moto/**
 
-
 eureka:
   client:
     fetch-registry: true
